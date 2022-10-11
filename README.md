@@ -23,6 +23,11 @@ yarn add --dev @types/express @types/node typescript ts-node-dev
 yarn run tsc --init
 ```
 
+## Run
+```
+npm run ts-node-dev
+```
+
 ## Reference
 https://qiita.com/Yuki-TU/items/14028be486306a0b41c4
 https://qiita.com/yoskeoka/items/01c52c069123e0298660

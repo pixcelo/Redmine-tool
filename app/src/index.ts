@@ -1,4 +1,5 @@
-import express from "express";
+import express from 'express';
+import { Greeter } from './greeter';
 
 const app: express.Express = express();
 app.use(express.json());
@@ -34,3 +35,7 @@ const users: User[] = [
 app.get("/users", (req: express.Request, res: express.Response) => {
   res.send(JSON.stringify(users));
 });
+
+//console.log(users);
+let greeter = new Greeter('Hello, world');
+greeter.greet('Tom');
