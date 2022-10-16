@@ -1,7 +1,5 @@
 import express from 'express';
-import config from 'config';
-import { Greeter } from './greeter';
-import { Fetcher } from './fetcher';
+import { ApiService } from './ApiService';
 
 const app: express.Express = express();
 app.use(express.json());
@@ -26,12 +24,5 @@ app.get('/', function (req, res) {
   res.send('test page');
 });
 
-//console.log(users);
-let greeter = new Greeter('Hello, world');
-greeter.greet('Tom');
-
-//let fetcher = new Fetcher();
-//fetcher.fetchUrl('https://nodejs.org/api/documentation.json');
-
-const _config = config.get('exchange.apiKey');
-console.log(_config);
+const apiService = new ApiService();
+apiService.has();

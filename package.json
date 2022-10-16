@@ -11,6 +11,7 @@
   "dependencies": {
     "@types/config": "^3.3.0",
     "@types/node-fetch": "^2.6.2",
+    "ccxt": "^2.0.25",
     "config": "^3.3.8",
     "express": "^4.18.2",
     "node-fetch": "^2.6.7"
