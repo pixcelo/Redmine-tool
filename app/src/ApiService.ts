@@ -3,7 +3,7 @@ import config from 'config';
 
 export class ApiService {
     exchangeClass: any
-    exchange: any
+    exchange: ccxt.Exchange
 
     constructor() {
         const exchangeClass = ccxt['bybit'];

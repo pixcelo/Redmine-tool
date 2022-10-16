@@ -170,6 +170,11 @@
     "normalize-path" "^3.0.0"
     "picomatch" "^2.0.4"
 
+"app-root-path@^3.1.0":
+  "integrity" "sha512-biN3PwB2gUtjaYy/isrU3aNWI5w+fAfvHkSvCKeQGxhmYpwKFUxudR3Yya+KqVRHBmEDYh+/lTozYCFbmzX4nA=="
+  "resolved" "https://registry.npmjs.org/app-root-path/-/app-root-path-3.1.0.tgz"
+  "version" "3.1.0"
+
 "arg@^4.1.0":
   "integrity" "sha512-58S9QDqG0Xx27YwPSt9fJxivjYl432YCwfDMfZ+71RAqUrZef7LrKQZ3LHLOwCS4FLNBplP533Zx895SeOCHvA=="
   "resolved" "https://registry.npmjs.org/arg/-/arg-4.1.3.tgz"
@@ -179,6 +184,11 @@
   "integrity" "sha512-PCVAQswWemu6UdxsDFFX/+gVeYqKAod3D3UVm91jHwynguOwAvYPhx8nNlM++NqRcK6CxxpUafjmhIdKiHibqg=="
   "resolved" "https://registry.npmjs.org/array-flatten/-/array-flatten-1.1.1.tgz"
   "version" "1.1.1"
+
+"async@^3.2.3":
+  "integrity" "sha512-iAB+JbDEGXhyIUavoDl9WP/Jj106Kz9DEn1DPgYw5ruDn0e3Wgi3sKFm55sASdGBNOQB8F59d9qQ7deqrHA8wQ=="
+  "resolved" "https://registry.npmjs.org/async/-/async-3.2.4.tgz"
+  "version" "3.2.4"
 
 "asynckit@^0.4.0":
   "integrity" "sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q=="
@@ -221,6 +231,13 @@
     "balanced-match" "^1.0.0"
     "concat-map" "0.0.1"
 
+"brace-expansion@^2.0.1":
+  "integrity" "sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA=="
+  "resolved" "https://registry.npmjs.org/brace-expansion/-/brace-expansion-2.0.1.tgz"
+  "version" "2.0.1"
+  dependencies:
+    "balanced-match" "^1.0.0"
+
 "braces@~3.0.2":
   "integrity" "sha512-b8um+L1RzM3WDSzvhm6gIz1yfTbBt6YTlcEKAvsmqCZZFw46z626lVj9j1yEPW33H5H+lBQpZMP1k8l+78Ha0A=="
   "resolved" "https://registry.npmjs.org/braces/-/braces-3.0.2.tgz"
@@ -254,7 +271,7 @@
     "replace-in-file" "^6.3.5"
     "ws" "^8.8.1"
 
-"chalk@^4.1.2":
+"chalk@^4.0.2", "chalk@^4.1.2":
   "integrity" "sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA=="
   "resolved" "https://registry.npmjs.org/chalk/-/chalk-4.1.2.tgz"
   "version" "4.1.2"
@@ -383,6 +400,13 @@
   "resolved" "https://registry.npmjs.org/ee-first/-/ee-first-1.1.1.tgz"
   "version" "1.1.1"
 
+"ejs@^3.1.8":
+  "integrity" "sha512-/sXZeMlhS0ArkfX2Aw780gJzXSMPnKjtspYZv+f3NiKLlubezAHDU5+9xz6gd3/NhG3txQCo6xlglmTS+oTGEQ=="
+  "resolved" "https://registry.npmjs.org/ejs/-/ejs-3.1.8.tgz"
+  "version" "3.1.8"
+  dependencies:
+    "jake" "^10.8.5"
+
 "emoji-regex@^8.0.0":
   "integrity" "sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A=="
   "resolved" "https://registry.npmjs.org/emoji-regex/-/emoji-regex-8.0.0.tgz"
@@ -444,6 +468,13 @@
     "type-is" "~1.6.18"
     "utils-merge" "1.0.1"
     "vary" "~1.1.2"
+
+"filelist@^1.0.1":
+  "integrity" "sha512-w1cEuf3S+DrLCQL7ET6kz+gmlJdbq9J7yXCSjK/OZCPA+qEN1WyF4ZAf0YYJa4/shHJra2t/d/r8SV4Ji+x+8Q=="
+  "resolved" "https://registry.npmjs.org/filelist/-/filelist-1.0.4.tgz"
+  "version" "1.0.4"
+  dependencies:
+    "minimatch" "^5.0.1"
 
 "fill-range@^7.0.1":
   "integrity" "sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ=="
@@ -621,6 +652,16 @@
   "resolved" "https://registry.npmjs.org/is-number/-/is-number-7.0.0.tgz"
   "version" "7.0.0"
 
+"jake@^10.8.5":
+  "integrity" "sha512-sVpxYeuAhWt0OTWITwT98oyV0GsXyMlXCF+3L1SuafBVUIr/uILGRB+NqwkzhgXKvoJpDIpQvqkUALgdmQsQxw=="
+  "resolved" "https://registry.npmjs.org/jake/-/jake-10.8.5.tgz"
+  "version" "10.8.5"
+  dependencies:
+    "async" "^3.2.3"
+    "chalk" "^4.0.2"
+    "filelist" "^1.0.1"
+    "minimatch" "^3.0.4"
+
 "json5@^2.2.1":
   "integrity" "sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA=="
   "resolved" "https://registry.npmjs.org/json5/-/json5-2.2.1.tgz"
@@ -663,12 +704,19 @@
   "resolved" "https://registry.npmjs.org/mime/-/mime-1.6.0.tgz"
   "version" "1.6.0"
 
-"minimatch@^3.1.1":
+"minimatch@^3.0.4", "minimatch@^3.1.1":
   "integrity" "sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw=="
   "resolved" "https://registry.npmjs.org/minimatch/-/minimatch-3.1.2.tgz"
   "version" "3.1.2"
   dependencies:
     "brace-expansion" "^1.1.7"
+
+"minimatch@^5.0.1":
+  "integrity" "sha512-9TPBGGak4nHfGZsPBohm9AWg6NoT7QTCehS3BIJABslyZbzxfV78QM2Y6+i741OPZIafFAaiiEMh5OyIrJPgtg=="
+  "resolved" "https://registry.npmjs.org/minimatch/-/minimatch-5.1.0.tgz"
+  "version" "5.1.0"
+  dependencies:
+    "brace-expansion" "^2.0.1"
 
 "minimist@^1.2.6":
   "integrity" "sha512-bzfL1YUZsP41gmu/qjrEk0Q6i2ix/cVeAhbCbqH9u3zYutS1cLg00qhrD0M2MVdCcx4Sc0UpP2eBWo9rotpq6g=="
