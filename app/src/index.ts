@@ -1,12 +1,8 @@
 import express from 'express';
-import appRoot from "app-root-path";
 import { ApiService } from './ApiService';
-import exp from 'constants';
 
 const app: express.Express = express();
 app.set('view engine', 'ejs');
-app.set('views', appRoot.resolve('src/views'));
-//app.use(express.static(__dirname + '../public)'));
 app.set('views', __dirname + '/views');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -26,10 +22,6 @@ app.listen(3000, () => {
   console.log('Start on ', app.listen().address());
 });
 
-// Get request
-// app.get('/', function (req, res) {
-//   res.send('test page');
-// });
 app.get('/', (req, res) => {
   res.render('index');
 });
