@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base</title>
+    <title><%= title %></title>
 </head>
 <body>
     <p>This is views template.</p>
+    <p><%= contents %></p>
+
+    <% for (const prop in contents) { %>
+        <p><%= prop %> <%= contents[prop] %></p>
+    <% } %>
 </body>
 </html>

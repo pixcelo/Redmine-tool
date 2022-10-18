@@ -1,5 +1,5 @@
 import express from 'express';
-import { ApiService } from './ApiService';
+import { ApiService } from './apiService';
 
 const app: express.Express = express();
 app.set('view engine', 'ejs');
@@ -22,9 +22,20 @@ app.listen(3000, () => {
   console.log('Start on ', app.listen().address());
 });
 
-app.get('/', (req, res) => {
-  res.render('index');
-});
+const apiService = new ApiService();
+//apiService.has();
+//apiService.check();
+let info: object;
+(async () => {
+  info = await apiService.fetchTicker('BTCUSD');
+  console.log(info)
+})();
+//apiService.fetchBalance();
 
-// const apiService = new ApiService();
-// apiService.has();
+app.get('/', (req, res) => {
+  const data = {
+    "title": "hogeController",
+    "contents": info
+  }
+  res.render('index', data);
+});
