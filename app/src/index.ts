@@ -1,9 +1,11 @@
 import express from 'express';
+import multer from 'multer';
+import { v4 as uuid } from 'uuid';
 import { ApiService } from './apiService';
 
 const app: express.Express = express();
-app.set('view engine', 'ejs');
-app.set('views', __dirname + '/views');
+app.use(multer().none());
+app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -38,10 +40,34 @@ let res: string;
 // const res = apiService.fetchKline('BTSUSD');
 // console.log(res)
 
-app.get('/', (req, res) => {
-  const data = {
-    'title': 'Base',
-    'data': res
-  }
-  res.render('index', data);
+const todoList: Array<object> = [];
+// const todoList = [
+//     { title: 'JavaScript', done: true },
+//     { title: 'Node.js', done: false },
+//     { title: 'Web API', done: false }
+// ];
+
+// // Route
+// // https://expressjs.com/ja/4x/api.html#app.METHOD
+app.get('/api/v1/list', (req, res) => {
+  res.json(todoList);
+});
+
+app.post('/api/v1/add', (req, res) => {
+  // Get data from client
+  const todoData = req.body;
+  const todoTitle = todoData.title;
+
+  const id = uuid();
+
+  const todoItem = {
+      id,
+      title: todoTitle,
+      done: false
+  };
+
+  todoList.push(todoItem);
+  console.log('Add: ' + JSON.stringify(todoItem));
+
+  res.json(todoItem);
 });
