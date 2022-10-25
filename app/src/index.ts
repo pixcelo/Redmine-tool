@@ -26,16 +26,22 @@ const apiService = new ApiService();
 //apiService.has();
 //apiService.check();
 let info: object;
+let res: string;
 (async () => {
   info = await apiService.fetchTicker('BTCUSD');
-  console.log(info)
+  //console.log(info)
+  res = await apiService.fetchOhlc('BTCUSDT');
+  //console.log(Object.keys(res))
+  //console.log(res);
 })();
 //apiService.fetchBalance();
+// const res = apiService.fetchKline('BTSUSD');
+// console.log(res)
 
 app.get('/', (req, res) => {
   const data = {
-    "title": "hogeController",
-    "contents": info
+    'title': 'Base',
+    'data': res
   }
   res.render('index', data);
 });

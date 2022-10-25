@@ -1,5 +1,6 @@
 import ccxt from 'ccxt';
 import config from 'config';
+import fetch from 'node-fetch';
 
 export class ApiService {
     exchangeClass: any
@@ -34,4 +35,12 @@ export class ApiService {
         const ticker: ccxt.Ticker = await this.exchange.fetchTicker(symbol);
         return ticker.info;
     }
+
+    async fetchOhlc(symbol: string) {
+        const response = await fetch(`https://api.cryptowat.ch/markets/bybit/${symbol}/ohlc`);
+        const json = await response.json();
+        return json.result;
+    }
+
+
 }
