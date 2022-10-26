@@ -489,6 +489,11 @@
     "utils-merge" "1.0.1"
     "vary" "~1.1.2"
 
+"fancy-canvas@0.2.2":
+  "integrity" "sha512-50qi8xA0QkHbjmb8h7XQ6k2fvD7y/yMfiUw9YTarJ7rWrq6o5/3CCXPouYk+XSLASvvxtjyiQLRBFt3qkE3oyA=="
+  "resolved" "https://registry.npmjs.org/fancy-canvas/-/fancy-canvas-0.2.2.tgz"
+  "version" "0.2.2"
+
 "fill-range@^7.0.1":
   "integrity" "sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ=="
   "resolved" "https://registry.npmjs.org/fill-range/-/fill-range-7.0.1.tgz"
@@ -674,6 +679,13 @@
   "integrity" "sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA=="
   "resolved" "https://registry.npmjs.org/json5/-/json5-2.2.1.tgz"
   "version" "2.2.1"
+
+"lightweight-charts@^3.8.0":
+  "integrity" "sha512-7yFGnYuE1RjRJG9RwUTBz5wvF1QtjBOSW4FFlikr8Dh+/TDNt4ci+HsWSYmStgQUpawpvkCJ3j5/W25GppGj9Q=="
+  "resolved" "https://registry.npmjs.org/lightweight-charts/-/lightweight-charts-3.8.0.tgz"
+  "version" "3.8.0"
+  dependencies:
+    "fancy-canvas" "0.2.2"
 
 "make-error@^1.1.1":
   "integrity" "sha512-s8UhlNe7vPKomQhC1qFelMokr/Sc3AgNbso3n74mVPA5LTZwkB9NlXf4XPamLxJE8h0gh73rM94xvwRT2CVInw=="

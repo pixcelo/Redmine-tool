@@ -55,7 +55,7 @@ app.get('/api/v1/list', (req, res) => {
 
 app.post('/api/v1/add', (req, res) => {
   // Get data from client
-  const todoData = req.body;
+  const todoData = req.body; // FormData
   const todoTitle = todoData.title;
 
   const id = uuid();
