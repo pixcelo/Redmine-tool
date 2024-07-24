@@ -1,0 +1,29 @@
+name: Send_Pullrequest-Message
+on:
+  pull_request:
+   types:
+    - ready_for_review
+jobs:
+  send_pullrequest-message:
+    timeout-minutes: 2
+    runs-on: ubuntu-latest
+    steps:
+    - name: member1
+      if: github.event.pull_request.requested_reviewers[0].login == 'pixcelo'
+      run: echo "Login_Name=Slack_memberID" >> "$GITHUB_ENV"
+    - name: member2
+      if: github.event.pull_request.requested_reviewers[0].login == 'member2'
+      run: echo "Login_Name=Slack_memberID" >> "$GITHUB_ENV"
+    - name: member3
+      if: github.event.pull_request.requested_reviewers[0].login == 'member3'
+      run: echo "Login_Name=Slack_memberID" >> "$GITHUB_ENV"
+    - uses: slackapi/slack-github-action@v1.16.0
+      if: env.Login_Name != '' 
+      with:
+        payload: "{\"text\":\" <@${{ env.Login_Name }}>\\n 以下のプルリクエストを作成しました。\\n 
+         Title     : ${{ github.event.pull_request.title}}\\n 
+         URL       : ${{ github.event.pull_request.html_url}}\\n
+         Assignees : ${{ github.event.pull_request.assignees[0].login}}\\n
+         Revwer    : ${{ github.event.pull_request.requested_reviewers[0].login}}\"}"
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
