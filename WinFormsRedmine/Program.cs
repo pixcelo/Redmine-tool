@@ -1,3 +1,6 @@
+using Microsoft.Extensions.DependencyInjection;
+using WinFormsRedmine.Classes;
+
 namespace WinFormsRedmine
 {
     internal static class Program
@@ -7,11 +10,23 @@ namespace WinFormsRedmine
         /// </summary>
         [STAThread]
         static void Main()
-        {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
+        {            
+            var services = new ServiceCollection();
+            ConfigureServices(services);
+
             ApplicationConfiguration.Initialize();
-            Application.Run(new MainForm());
+
+            using (var serviceProvider = services.BuildServiceProvider())
+            {
+                var form = serviceProvider.GetRequiredService<MainForm>();
+                Application.Run(form);
+            }
+        }
+
+        private static void ConfigureServices(ServiceCollection services)
+        {
+            services.AddSingleton<MainForm>();            
+            services.AddTransient<IApiAccessor, ApiAccessor>();
         }
     }
 }
