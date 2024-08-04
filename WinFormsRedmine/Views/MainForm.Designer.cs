@@ -28,12 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            fetchButton = new Button();
+            statusComboBox = new ComboBox();
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            SuspendLayout();
+            // 
+            // fetchButton
+            // 
+            fetchButton.Location = new Point(20, 38);
+            fetchButton.Name = "fetchButton";
+            fetchButton.Size = new Size(75, 23);
+            fetchButton.TabIndex = 0;
+            fetchButton.Text = "fetch";
+            fetchButton.UseVisualStyleBackColor = true;
+            fetchButton.Click += fetchButton_Click;
+            // 
+            // statusComboBox
+            // 
+            statusComboBox.FormattingEnabled = true;
+            statusComboBox.Location = new Point(122, 38);
+            statusComboBox.Name = "statusComboBox";
+            statusComboBox.Size = new Size(121, 23);
+            statusComboBox.TabIndex = 1;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(20, 85);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(721, 264);
+            dataGridView1.TabIndex = 2;
+            // 
+            // MainForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(774, 382);
+            Controls.Add(dataGridView1);
+            Controls.Add(statusComboBox);
+            Controls.Add(fetchButton);
+            Name = "MainForm";
+            Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button fetchButton;
+        private ComboBox statusComboBox;
+        private DataGridView dataGridView1;
     }
 }
