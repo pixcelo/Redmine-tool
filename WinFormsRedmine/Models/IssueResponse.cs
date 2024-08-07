@@ -11,6 +11,14 @@ namespace WinFormsRedmine.Models
     }
 
     /// <summary>
+    /// イシューレスポンス（単体）
+    /// </summary>
+    public sealed class IssueResponseSingle
+    {
+        public Issue? Issue { get; set; }
+    }
+
+    /// <summary>
     /// イシュー
     /// </summary>
     public class Issue
