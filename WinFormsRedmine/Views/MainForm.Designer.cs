@@ -61,6 +61,7 @@
             issuesDataGridView.Dock = DockStyle.Bottom;
             issuesDataGridView.Location = new Point(0, 88);
             issuesDataGridView.Name = "issuesDataGridView";
+            issuesDataGridView.RowHeadersVisible = false;
             issuesDataGridView.RowHeadersWidth = 51;
             issuesDataGridView.Size = new Size(898, 518);
             issuesDataGridView.TabIndex = 2;

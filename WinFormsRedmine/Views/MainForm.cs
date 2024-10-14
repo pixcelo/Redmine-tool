@@ -69,7 +69,7 @@ namespace WinFormsRedmine
 
                 using (var form = new DetailForm(issue))
                 {
-                    form.ShowDialog();
+                    form.ShowDialog(this);
                 }
             }
         }
