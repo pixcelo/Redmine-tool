@@ -28,79 +28,76 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.fetchButton = new Button();
-            this.statusComboBox = new ComboBox();
-            this.issuesDataGridView = new DataGridView();
-            this.issueIdTextBox = new TextBox();
-            this.issueIdLabel = new Label();
-            ((System.ComponentModel.ISupportInitialize)this.issuesDataGridView).BeginInit();
-            this.SuspendLayout();
+            fetchButton = new Button();
+            statusComboBox = new ComboBox();
+            issuesDataGridView = new DataGridView();
+            issueIdTextBox = new TextBox();
+            issueIdLabel = new Label();
+            ((System.ComponentModel.ISupportInitialize)issuesDataGridView).BeginInit();
+            SuspendLayout();
             // 
             // fetchButton
             // 
-            this.fetchButton.Location = new Point(23, 51);
-            this.fetchButton.Margin = new Padding(3, 4, 3, 4);
-            this.fetchButton.Name = "fetchButton";
-            this.fetchButton.Size = new Size(86, 31);
-            this.fetchButton.TabIndex = 0;
-            this.fetchButton.Text = "fetch";
-            this.fetchButton.UseVisualStyleBackColor = true;
-            this.fetchButton.Click += this.fetchButton_Click;
+            fetchButton.Location = new Point(20, 38);
+            fetchButton.Name = "fetchButton";
+            fetchButton.Size = new Size(75, 23);
+            fetchButton.TabIndex = 0;
+            fetchButton.Text = "fetch";
+            fetchButton.UseVisualStyleBackColor = true;
+            fetchButton.Click += fetchButton_Click;
             // 
             // statusComboBox
             // 
-            this.statusComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            this.statusComboBox.FormattingEnabled = true;
-            this.statusComboBox.Location = new Point(139, 51);
-            this.statusComboBox.Margin = new Padding(3, 4, 3, 4);
-            this.statusComboBox.Name = "statusComboBox";
-            this.statusComboBox.Size = new Size(109, 28);
-            this.statusComboBox.TabIndex = 1;
+            statusComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            statusComboBox.FormattingEnabled = true;
+            statusComboBox.Location = new Point(122, 38);
+            statusComboBox.Name = "statusComboBox";
+            statusComboBox.Size = new Size(96, 23);
+            statusComboBox.TabIndex = 1;
             // 
             // issuesDataGridView
             // 
-            this.issuesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.issuesDataGridView.Dock = DockStyle.Bottom;
-            this.issuesDataGridView.Location = new Point(0, 109);
-            this.issuesDataGridView.Margin = new Padding(3, 4, 3, 4);
-            this.issuesDataGridView.Name = "issuesDataGridView";
-            this.issuesDataGridView.RowHeadersWidth = 51;
-            this.issuesDataGridView.Size = new Size(885, 400);
-            this.issuesDataGridView.TabIndex = 2;
-            this.issuesDataGridView.CellContentDoubleClick += this.issuesDataGridView_CellContentDoubleClick;
+            issuesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            issuesDataGridView.Dock = DockStyle.Bottom;
+            issuesDataGridView.Location = new Point(0, 88);
+            issuesDataGridView.Name = "issuesDataGridView";
+            issuesDataGridView.RowHeadersWidth = 51;
+            issuesDataGridView.Size = new Size(898, 400);
+            issuesDataGridView.TabIndex = 2;
+            issuesDataGridView.CellContentDoubleClick += issuesDataGridView_CellContentDoubleClick;
             // 
             // issueIdTextBox
             // 
-            this.issueIdTextBox.Location = new Point(272, 53);
-            this.issueIdTextBox.Name = "issueIdTextBox";
-            this.issueIdTextBox.Size = new Size(125, 27);
-            this.issueIdTextBox.TabIndex = 3;
+            issueIdTextBox.Location = new Point(238, 40);
+            issueIdTextBox.Margin = new Padding(3, 2, 3, 2);
+            issueIdTextBox.Name = "issueIdTextBox";
+            issueIdTextBox.Size = new Size(110, 23);
+            issueIdTextBox.TabIndex = 3;
             // 
             // issueIdLabel
             // 
-            this.issueIdLabel.AutoSize = true;
-            this.issueIdLabel.Location = new Point(272, 30);
-            this.issueIdLabel.Name = "issueIdLabel";
-            this.issueIdLabel.Size = new Size(24, 20);
-            this.issueIdLabel.TabIndex = 4;
-            this.issueIdLabel.Text = "ID";
+            issueIdLabel.AutoSize = true;
+            issueIdLabel.Location = new Point(238, 22);
+            issueIdLabel.Name = "issueIdLabel";
+            issueIdLabel.Size = new Size(18, 15);
+            issueIdLabel.TabIndex = 4;
+            issueIdLabel.Text = "ID";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new SizeF(8F, 20F);
-            this.AutoScaleMode = AutoScaleMode.Font;
-            this.ClientSize = new Size(885, 509);
-            this.Controls.Add(this.issueIdLabel);
-            this.Controls.Add(this.issueIdTextBox);
-            this.Controls.Add(this.issuesDataGridView);
-            this.Controls.Add(this.statusComboBox);
-            this.Controls.Add(this.fetchButton);
-            this.Margin = new Padding(3, 4, 3, 4);
-            this.Name = "MainForm";
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)this.issuesDataGridView).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(898, 488);
+            Controls.Add(issueIdLabel);
+            Controls.Add(issueIdTextBox);
+            Controls.Add(issuesDataGridView);
+            Controls.Add(statusComboBox);
+            Controls.Add(fetchButton);
+            Name = "MainForm";
+            Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)issuesDataGridView).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

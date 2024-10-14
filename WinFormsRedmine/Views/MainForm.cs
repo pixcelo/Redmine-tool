@@ -58,6 +58,8 @@ namespace WinFormsRedmine
 
             // DataGridViewにバインドする
             this.issuesDataGridView.DataSource = issueViewModels;
+            // 列の幅を自動調整する
+            this.issuesDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
         /// <summary>
@@ -82,8 +84,7 @@ namespace WinFormsRedmine
             }
         }
 
-        // TODO: 
-        // ステータスを指定して取得する
+        // TODO:         
         // 担当者を指定して取得する
         // 期間を指定して取得する
         // チケット番号を指定して取得する
