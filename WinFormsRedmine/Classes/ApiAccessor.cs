@@ -24,10 +24,9 @@ namespace WinFormsRedmine.Classes
         /// <returns></returns>
         Task<Issue?> FetchIssue(string id);
     }
-
+    
     public sealed class ApiAccessor : IApiAccessor
-    {
-        
+    {        
         private static readonly HttpClient httpClient = new HttpClient();
         private readonly string? baseUrl;
         private readonly string? apiKey;
@@ -42,10 +41,18 @@ namespace WinFormsRedmine.Classes
             this.apiKey = configurationRoot["ApiKey"];
         }
 
+        /// <remarks>
+        /// <see href="https://www.redmine.org/projects/redmine/wiki/Rest_Issues"/>
+        /// </remarks>
         public async Task<List<Issue>> FetchIssues(IssueRequest issueRequest)
         {
-            var url = $"{this.baseUrl}/redmine/issues.json";                
-            var requestUrl = $"{url}?assigned_to_id=me&key={this.apiKey}";
+            var url = $"{this.baseUrl}/redmine/issues.json";
+            var requestUrl = $"{url}?assigned_to_id=me";
+            if (issueRequest.TicketStatusId != "0")
+            {
+                requestUrl += "&status_id=" + issueRequest.TicketStatusId;
+            }
+            requestUrl += $"&key={ this.apiKey}";
 
             HttpResponseMessage response = await httpClient.GetAsync(requestUrl);
             response.EnsureSuccessStatusCode();

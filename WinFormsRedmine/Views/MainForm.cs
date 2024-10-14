@@ -30,7 +30,13 @@ namespace WinFormsRedmine
         /// </summary>
         private void SetUp()
         {
-            this.statusComboBox.DataSource = Enum.GetValues(typeof(TicketStatus));
+            // Enumの値をコンボボックスにバインドする
+            //this.statusComboBox.DataSource = Enum.GetValues(typeof(TicketStatus));
+
+            // クラスの値をコンボボックスにバインドする
+            this.statusComboBox.DataSource = new IssueStatuses().List;
+            this.statusComboBox.DisplayMember = "Name";
+            this.statusComboBox.ValueMember = "Id";
         }
 
         /// <summary>
@@ -43,7 +49,7 @@ namespace WinFormsRedmine
             var issueRequest = new IssueRequest()
             {
                 TicketId = this.issueIdTextBox.Text,
-                TicketStatus = this.statusComboBox.Text,
+                TicketStatusId = this.statusComboBox.SelectedValue?.ToString(),
                 AssignedTo = "me"
             };
 

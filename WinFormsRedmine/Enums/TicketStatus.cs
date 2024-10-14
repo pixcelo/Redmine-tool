@@ -7,7 +7,7 @@
     {
         New = 0,
 
-        Assined = 1,
+        Assigned = 1,
 
         Developing = 2,
 

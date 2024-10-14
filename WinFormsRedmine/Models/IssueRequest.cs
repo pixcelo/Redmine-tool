@@ -8,9 +8,9 @@
         public string? TicketId { get; set; }
 
         /// <summary>
-        /// ステータス
+        /// ステータスID
         /// </summary>
-        public string? TicketStatus { get; set; }
+        public string? TicketStatusId { get; set; }
 
         /// <summary>
         /// 担当者
