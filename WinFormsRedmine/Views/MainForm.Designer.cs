@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             fetchButton = new Button();
             statusComboBox = new ComboBox();
             issuesDataGridView = new DataGridView();
@@ -57,8 +58,18 @@
             // 
             // issuesDataGridView
             // 
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.Font = new Font("Yu Gothic UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.InactiveBorder;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            issuesDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             issuesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             issuesDataGridView.Dock = DockStyle.Bottom;
+            issuesDataGridView.EnableHeadersVisualStyles = false;
+            issuesDataGridView.GridColor = SystemColors.InactiveBorder;
             issuesDataGridView.Location = new Point(0, 88);
             issuesDataGridView.Name = "issuesDataGridView";
             issuesDataGridView.RowHeadersVisible = false;
