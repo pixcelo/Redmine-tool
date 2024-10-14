@@ -4,9 +4,9 @@
     {
         public string Id { get; set; }
 
-        public string? Subject { get; set; }
-
         public string? TrackerName { get; set; }
+
+        public string? Subject { get; set; }
 
         public string? StatusName { get; set; }
 
@@ -23,8 +23,8 @@
         public IssueViewModel(Issue issue)
         {
             this.Id = "#" + issue.Id;
-            this.Subject = issue.Subject;
             this.TrackerName = issue.Tracker?.Name;
+            this.Subject = issue.Subject;
             this.StatusName = issue.Status?.Name;
             this.AssignedName = issue.AssignedTo?.Name;
             this.FixedVersion = issue.FixedVersion?.Name;

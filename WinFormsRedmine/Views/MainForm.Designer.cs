@@ -62,7 +62,7 @@
             issuesDataGridView.Location = new Point(0, 88);
             issuesDataGridView.Name = "issuesDataGridView";
             issuesDataGridView.RowHeadersWidth = 51;
-            issuesDataGridView.Size = new Size(898, 400);
+            issuesDataGridView.Size = new Size(898, 518);
             issuesDataGridView.TabIndex = 2;
             issuesDataGridView.CellContentDoubleClick += issuesDataGridView_CellContentDoubleClick;
             // 
@@ -87,7 +87,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(898, 488);
+            ClientSize = new Size(898, 606);
             Controls.Add(issueIdLabel);
             Controls.Add(issueIdTextBox);
             Controls.Add(issuesDataGridView);

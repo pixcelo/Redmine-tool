@@ -18,6 +18,9 @@ namespace WinFormsRedmine
             this.apiAccessor = apiAccessor;
 
             this.SetUp();
+
+            // 初期表示
+            this.FetchIssues();
         }
 
         public MainForm()
@@ -46,20 +49,7 @@ namespace WinFormsRedmine
         /// <param name="e"></param>
         private async void fetchButton_Click(object sender, EventArgs e)
         {
-            var issueRequest = new IssueRequest()
-            {
-                TicketId = this.issueIdTextBox.Text,
-                TicketStatusId = this.statusComboBox.SelectedValue?.ToString(),
-                AssignedTo = "me"
-            };
-
-            var issues = await this.apiAccessor.FetchIssues(issueRequest);
-            var issueViewModels = issues.Select(issue => new IssueViewModel(issue)).ToList();
-
-            // DataGridViewにバインドする
-            this.issuesDataGridView.DataSource = issueViewModels;
-            // 列の幅を自動調整する
-            this.issuesDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            this.FetchIssues();
         }
 
         /// <summary>
@@ -84,11 +74,30 @@ namespace WinFormsRedmine
             }
         }
 
+        private async void FetchIssues()
+        {
+            var issueRequest = new IssueRequest()
+            {
+                TicketId = this.issueIdTextBox.Text,
+                TicketStatusId = this.statusComboBox.SelectedValue?.ToString(),
+                AssignedTo = "me"
+            };
+
+            var issues = await this.apiAccessor.FetchIssues(issueRequest);
+            var issueViewModels = issues.Select(issue => new IssueViewModel(issue)).ToList();
+
+            // DataGridViewにバインドする
+            this.issuesDataGridView.DataSource = issueViewModels;
+            // 列の幅を自動調整する
+            this.issuesDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+
         // TODO:         
         // 担当者を指定して取得する
         // 期間を指定して取得する
         // チケット番号を指定して取得する
         // 親チケットに関連して、子チケットを取得する
         // チケット一覧の合計を出す
+        // 指定した日の工数がついたチケット一覧を取得する
     }
 }
