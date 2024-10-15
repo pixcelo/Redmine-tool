@@ -83,11 +83,22 @@ namespace WinFormsRedmine
                 AssignedTo = "me"
             };
 
-            var issues = await this.apiAccessor.FetchIssues(issueRequest);
-            var issueViewModels = issues.Select(issue => new IssueViewModel(issue)).ToList();
+            var issueViewModels = new List<IssueViewModel>();
+
+            if (string.IsNullOrEmpty(issueRequest.TicketId))
+            {
+                var issues = await this.apiAccessor.FetchIssues(issueRequest);
+                issueViewModels.AddRange(issues.Select(issue => new IssueViewModel(issue)));
+            }
+            else
+            {
+                var issue = await this.apiAccessor.FetchIssue(issueRequest.TicketId);
+                issueViewModels.Add(new IssueViewModel(issue));
+            }
 
             // DataGridView‚ÉƒoƒCƒ“ƒh‚·‚é
             this.issuesDataGridView.DataSource = issueViewModels;
+
             // —ñ‚Ì•‚ğ©“®’²®‚·‚é
             this.issuesDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }

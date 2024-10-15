@@ -18,18 +18,11 @@ namespace WinFormsRedmine.Classes
         Task<List<Issue>> FetchIssues(IssueRequest issueRequest);
 
         /// <summary>
-        /// イシューをIDから取得する
+        /// イシューを取得する
         /// </summary>
         /// <param name="issueId"></param>
         /// <returns></returns>
-        Task<Issue?> FetchIssueByID(string issueId);
-
-        /// <summary>
-        /// イシューを取得する
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        Task<Issue?> FetchIssue(string id);
+        Task<Issue?> FetchIssue(string issueId);
     }
     
     public sealed class ApiAccessor : IApiAccessor
@@ -69,27 +62,12 @@ namespace WinFormsRedmine.Classes
             var issueResponse = JsonConvert.DeserializeObject<IssueResponse>(responseBody);
             return issueResponse?.Issues;
         }
-        
-        /// <inheritdoc/>
-        public async Task<Issue?> FetchIssueByID(string issueId)
-        {
-            var url = $"{this.baseUrl}/redmine/issues";
-            var requestUrl = $"{url}/{issueId}?&key={this.apiKey}";
-
-            HttpResponseMessage response = await httpClient.GetAsync(requestUrl);
-            response.EnsureSuccessStatusCode();
-            string responseBody = await response.Content.ReadAsStringAsync();
-
-            // TODO: デシリアライズが上手くいっていない
-            var issueResponse = JsonConvert.DeserializeObject<IssueResponseSingle>(responseBody);
-            return issueResponse?.Issue;
-        }
 
         /// <inheritdoc/>
-        public async Task<Issue?> FetchIssue(string id)
+        public async Task<Issue?> FetchIssue(string issueId)
         {
-            var url = $"{this.baseUrl}/redmine/issues/{id}.json";
-            var requestUrl = $"{url}?assigned_to_id=me&key={apiKey}";
+            var url = $"{this.baseUrl}/redmine/issues/{issueId}.json";
+            var requestUrl = $"{url}?&key={apiKey}";
 
             HttpResponseMessage response = await httpClient.GetAsync(requestUrl);
             response.EnsureSuccessStatusCode();

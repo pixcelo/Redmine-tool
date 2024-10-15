@@ -2,9 +2,9 @@
 {
     public sealed class IssueViewModel
     {
-        public string Id { get; set; }
-
         public string? TrackerName { get; set; }
+
+        public string Id { get; set; }
 
         public string? Subject { get; set; }
 
@@ -22,8 +22,8 @@
 
         public IssueViewModel(Issue issue)
         {
-            this.Id = "#" + issue.Id;
             this.TrackerName = issue.Tracker?.Name;
+            this.Id = "#" + issue.Id;
             this.Subject = issue.Subject;
             this.StatusName = issue.Status?.Name;
             this.AssignedName = issue.AssignedTo?.Name;
